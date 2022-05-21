@@ -165,7 +165,7 @@ public class AdminManagement {
     
     public void AddOrder(String orderID, String CustomerName, String ReceiverName,
             String SenderID, String StaffID,String ReceiverPhone, 
-            String ReceiverAddress, String Feedback,String Status, 
+            String ReceiverAddress, String greutate, String Feedback,String Status, 
             String Payment, int Rate) throws IOException {
         try (PrintWriter addM = new PrintWriter(new FileWriter("OrderRecords.txt", true))) {
             addM.print(orderID + ":");
@@ -175,6 +175,7 @@ public class AdminManagement {
             addM.print(ReceiverName + ":");            
             addM.print(ReceiverAddress + ":");
             addM.print(ReceiverPhone + ":");
+            addM.print(greutate + ":");
             addM.print(Feedback + ":");
             addM.print(Status + ":");
             addM.print(Payment+":");
@@ -193,7 +194,7 @@ public class AdminManagement {
     //editare comanda
     public void editOrder(int in, String orderID, String CustomerName, String ReceiverName,
             String CustomerID, String StaffID,String ReceiverPhone, 
-            String ReceiverAddress, String Feedback, 
+            String ReceiverAddress, String greutate, String Feedback, 
             String Status, String Payment, int Rate) throws FileNotFoundException {
             OrderDetails.getOrderlist().get(in).setOrderID(orderID);
             OrderDetails.getOrderlist().get(in).setStaffID(StaffID);
@@ -202,6 +203,7 @@ public class AdminManagement {
             OrderDetails.getOrderlist().get(in).setReceiverName(ReceiverName);
             OrderDetails.getOrderlist().get(in).setReceiverAddress(ReceiverAddress);
             OrderDetails.getOrderlist().get(in).setReceiverPhone(ReceiverPhone);
+            OrderDetails.getOrderlist().get(in).setWeight(greutate);
             OrderDetails.getOrderlist().get(in).setFeedback(Feedback);
             OrderDetails.getOrderlist().get(in).setStatus(Status);
             OrderDetails.getOrderlist().get(in).setPayment(Payment);
@@ -217,6 +219,7 @@ public class AdminManagement {
                     + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                    + OrderDetails.getOrderlist().get(i).getWeight() + ":"
                     + OrderDetails.getOrderlist().get(i).getFeedback() + ":"
                     + OrderDetails.getOrderlist().get(i).getStatus()+":"
                     + OrderDetails.getOrderlist().get(i).getPayment()+":"
@@ -244,6 +247,7 @@ public class AdminManagement {
                     + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                    + OrderDetails.getOrderlist().get(i).getWeight()+ ":"
                     + OrderDetails.getOrderlist().get(i).getFeedback() + ":"
                     + OrderDetails.getOrderlist().get(i).getStatus()+":"
                     + OrderDetails.getOrderlist().get(i).getPayment()+":"

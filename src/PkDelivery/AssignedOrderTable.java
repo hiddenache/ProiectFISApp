@@ -262,6 +262,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
             String CustomerName = OrderDetails.getOrderlist().get(GetRecord).getCustomerName();
             String ReceiverName = OrderDetails.getOrderlist().get(GetRecord).getReceiverName();
             String ReceiverAddress = OrderDetails.getOrderlist().get(GetRecord).getReceiverAddress();
+            String greutate = OrderDetails.getOrderlist().get(GetRecord).getWeight();
             String ReceiverPhone = OrderDetails.getOrderlist().get(GetRecord).getReceiverPhone();
             String Feedback = OrderDetails.getOrderlist().get(GetRecord).getFeedback();
             String Payment =  OrderDetails.getOrderlist().get(GetRecord).getPayment();
@@ -270,7 +271,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
             try {
                 ad.editOrder(GetRecord, OrderID,CustomerName, ReceiverName,
                         CustomerID,StaffID, ReceiverPhone,
-                        ReceiverAddress,Feedback, status,Payment, Rate);
+                        ReceiverAddress, greutate, Feedback, status,Payment, Rate);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(AssignedOrderTable.class.getName()).log(Level.SEVERE, null, ex);
             }

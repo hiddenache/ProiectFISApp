@@ -6,7 +6,15 @@ public class OrderDetails {
     private String OrderID, CustomerName , ReceiverName, CustomerID, 
             ReceiverAddress, StaffID, ReceiverPhone, Feedback, Status, payment;   
     private int Rate;
-    private static ArrayList <OrderDetails> Orderlist = new  ArrayList <>();
+    private String Weight;
+    public String getWeight() {
+		return Weight;
+	}
+
+	public void setWeight(String weight) {
+		Weight = weight;
+	}
+	private static ArrayList <OrderDetails> Orderlist = new  ArrayList <>();
 
     public String getOrderID() {
         return OrderID;

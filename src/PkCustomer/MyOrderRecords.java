@@ -13,6 +13,7 @@ import java.awt.Color;
 public class MyOrderRecords extends javax.swing.JFrame {
     int indext;
     public MyOrderRecords() {
+    	setBackground(new Color(240, 240, 240));
        
         initComponents();
     }
@@ -20,7 +21,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
         
         indext = arrayIndext;
         String c[] = {"OrderID" , "DeliverySID " , "CustomerID ","CustomerName" 
-                    , "Receiver Name" , "Receiver Address", "Receiver Phone",
+                    , "Receiver Name" , "Receiver Address", "Receiver Phone", "Weight",
                     "Order Status", "Fees", "Feedback", "Rate"};
         DefaultTableModel table1;
         table1 = new DefaultTableModel(0,10);
@@ -41,6 +42,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                         + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                         + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                         + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                        + OrderDetails.getOrderlist().get(i).getWeight() + ":"
                         + OrderDetails.getOrderlist().get(i).getStatus()+":"
                         + OrderDetails.getOrderlist().get(i).getPayment()+":"
                         + OrderDetails.getOrderlist().get(i).getFeedback() + ":"
@@ -215,7 +217,9 @@ public class MyOrderRecords extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    String idClient = OrderDetails.getOrderlist().get(indext).getCustomerID();
+    
     private void backbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbActionPerformed
         // TODO add your handling code here:
         setVisible(false);
@@ -233,7 +237,6 @@ public class MyOrderRecords extends javax.swing.JFrame {
         else{
             AdminManagement ad = new AdminManagement();
             
-            String idClient = OrderDetails.getOrderlist().get(indext).getCustomerID();
             System.out.println("ID CLIENT: " + idClient);
             int myIndext = ad.searchOrder(OrderID.getText());
             if (myIndext == -1){
@@ -248,7 +251,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 String ReceiverName = OrderDetails.getOrderlist().get(myIndext).getReceiverName();
                 String ReceiverAddress = OrderDetails.getOrderlist().get(myIndext).getReceiverAddress();
                 String ReceiverPhone = OrderDetails.getOrderlist().get(myIndext).getReceiverPhone();
-
+                String greutate = OrderDetails.getOrderlist().get(myIndext).getWeight();
                 String Payment =  OrderDetails.getOrderlist().get(myIndext).getPayment();
                 String orderstatus= OrderDetails.getOrderlist().get(myIndext).getStatus();
                 
@@ -256,7 +259,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 try {
                     ad.editOrder(myIndext, OrderiD,CustomerName, ReceiverName,
                             CustomerID,StaffID, ReceiverPhone,
-                            ReceiverAddress,Feedbackd.getText(), orderstatus,Payment, rate);
+                            ReceiverAddress, greutate, Feedbackd.getText(), orderstatus,Payment, rate);
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(MyOrderRecords.class.getName()).log(Level.SEVERE, null, ex);
                 }
