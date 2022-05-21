@@ -1,1 +1,1 @@
-1:h:2:Madalin:Raul:Timisoara,Timis:0767223750::Delivered:Card:0
+1:h:2:Madalin:Raul:Timisoara,Timis:0767223750:ggh:Undelivered:Card:2

@@ -224,7 +224,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
 
     private void RefreshAndSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshAndSafeActionPerformed
         // TODO add your handling code here:
-        
+    	
         int rate = Integer.parseInt(Rate.getText());
         if(rate <1 || rate > 5){
             JOptionPane.showMessageDialog(null, "Rating range must be between (1-5)", "Error Message", JOptionPane.ERROR_MESSAGE);      
@@ -232,7 +232,10 @@ public class MyOrderRecords extends javax.swing.JFrame {
         }
         else{
             AdminManagement ad = new AdminManagement();
-            int myIndext = ad.searchOrder2(OrderID.getText(),OrderDetails.getOrderlist().get(indext).getCustomerID());
+            
+            String idClient = OrderDetails.getOrderlist().get(indext).getCustomerID();
+            System.out.println("ID CLIENT: " + idClient);
+            int myIndext = ad.searchOrder(OrderID.getText());
             if (myIndext == -1){
                  JOptionPane.showMessageDialog(null, "OrderID is not avaiable in your order list", "Error Message", JOptionPane.ERROR_MESSAGE);      
             }
@@ -249,7 +252,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 String Payment =  OrderDetails.getOrderlist().get(myIndext).getPayment();
                 String orderstatus= OrderDetails.getOrderlist().get(myIndext).getStatus();
                 
-                System.out.println(myIndext);
+                //System.out.println(myIndext);
                 try {
                     ad.editOrder(myIndext, OrderiD,CustomerName, ReceiverName,
                             CustomerID,StaffID, ReceiverPhone,
