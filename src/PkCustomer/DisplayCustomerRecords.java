@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 import PkAdmin.ManageCustomerAccount;
+import java.awt.Color;
 
 public class DisplayCustomerRecords extends javax.swing.JFrame {
 
@@ -62,7 +63,7 @@ public class DisplayCustomerRecords extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setForeground(new Color(153, 0, 255));
         jLabel1.setText("Customer Records List");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

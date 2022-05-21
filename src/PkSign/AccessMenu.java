@@ -2,6 +2,7 @@
 package PkSign;
 
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 public class AccessMenu extends javax.swing.JFrame {
 
@@ -26,7 +27,7 @@ public class AccessMenu extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel8.setForeground(new Color(153, 0, 255));
         jLabel8.setText("Fan Courier v2");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);

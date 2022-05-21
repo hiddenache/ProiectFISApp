@@ -2,6 +2,9 @@ package PkSign;
 import PkDelivery.DeliveryStaffPanel;
 import PkDelivery.DeliveryStaffDetails;
 import javax.swing.JOptionPane;
+import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class DeliveryStaffSignIn extends javax.swing.JFrame {
     
@@ -30,25 +33,25 @@ public class DeliveryStaffSignIn extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel4.setText("Delivery Staff Login Page");
+        jLabel4.setForeground(new Color(153, 0, 255));
+        jLabel4.setText("Staff Log In");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanel12Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel12Layout.createSequentialGroup()
+        			.addGap(164)
+        			.addComponent(jLabel4)
+        			.addContainerGap(200, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanel12Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel12Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel4)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jPanel12.setLayout(jPanel12Layout);
 
         username.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         username.addActionListener(new java.awt.event.ActionListener() {

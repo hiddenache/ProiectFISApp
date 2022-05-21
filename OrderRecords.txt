@@ -1,1 +1,1 @@
-1:h:1:Madalin:Raul:Tmis, Timisoara:0767223750::Undelivered:200:0
+1:h:2:Madalin:Raul:Timisoara,Timis:0767223750::Delivered:Card:0

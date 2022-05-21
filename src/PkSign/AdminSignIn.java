@@ -2,6 +2,7 @@ package PkSign;
 import javax.swing.JOptionPane;
 
 import PkAdmin.AdminPanel;
+import java.awt.Color;
 
 public class AdminSignIn extends javax.swing.JFrame {
     
@@ -29,7 +30,7 @@ public class AdminSignIn extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel4.setForeground(new Color(153, 0, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Admin Log In");
 

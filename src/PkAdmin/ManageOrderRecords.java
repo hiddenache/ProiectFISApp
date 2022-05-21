@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 public class ManageOrderRecords extends javax.swing.JFrame {
 
     String status;
-    int fees, getRecord;
+    int getRecord;
+    String fees;
     int rate=0;
     String feedback="";
     public ManageOrderRecords() {
@@ -325,7 +327,7 @@ public class ManageOrderRecords extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setForeground(new Color(153, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Order Records");
 
@@ -397,7 +399,7 @@ public class ManageOrderRecords extends javax.swing.JFrame {
             }
             else{
                 AdminManagement af = new AdminManagement();
-                fees = Integer.parseInt(payments.getText());
+                fees = payments.getText();
                 status = "Undelivered";
                 try {
                     af.AddOrder(orderid.getText(),sendername.getText(), receiverName.getText(),
@@ -553,7 +555,7 @@ public class ManageOrderRecords extends javax.swing.JFrame {
         }
         else{
             AdminManagement af = new AdminManagement();
-                    fees = Integer.parseInt(payments.getText());
+                    fees = payments.getText();
                     status = OrderDetails.getOrderlist().get(getRecord).getStatus();
                     rate= OrderDetails.getOrderlist().get(getRecord).getRate();
                     feedback = OrderDetails.getOrderlist().get(getRecord).getFeedback();

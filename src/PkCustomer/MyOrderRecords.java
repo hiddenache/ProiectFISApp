@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import PkAdmin.AdminManagement;
+import java.awt.Color;
 
 public class MyOrderRecords extends javax.swing.JFrame {
     int indext;
@@ -78,7 +79,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setForeground(new Color(153, 0, 255));
         jLabel1.setText("Customer Orders Table");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -245,7 +246,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 String ReceiverAddress = OrderDetails.getOrderlist().get(myIndext).getReceiverAddress();
                 String ReceiverPhone = OrderDetails.getOrderlist().get(myIndext).getReceiverPhone();
 
-                int Payment =  OrderDetails.getOrderlist().get(myIndext).getPayment();
+                String Payment =  OrderDetails.getOrderlist().get(myIndext).getPayment();
                 String orderstatus= OrderDetails.getOrderlist().get(myIndext).getStatus();
                 
                 System.out.println(myIndext);

@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import PkAdmin.AdminManagement;
+import java.awt.Color;
 
 public class AssignedOrderTable extends javax.swing.JFrame {
     int indext;
@@ -79,7 +80,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setForeground(new Color(153, 0, 255));
         jLabel1.setText("Assigned Orders Table");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -138,7 +139,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Status");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivered", "Undelivered" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivering", "Delivered", "Undelivered" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -239,12 +240,15 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         // TODO add your handling code here:
         int statusIndext= (int) jComboBox1.getSelectedIndex();
         
-        String status;  
+        String status = "";  
         if(statusIndext == 0){
+            status = "Delivering";
+        }
+        if(statusIndext == 1){
             status = "Delivered";
         }
-        else{
-            status = "Undelivered";
+        if(statusIndext == 2) {
+        	status = "Undelivered";
         }
         AdminManagement ad = new AdminManagement();
         int GetRecord = ad.searchOrder2(Orderid.getText(),OrderDetails.getOrderlist().get(indext).getStaffID());
@@ -260,7 +264,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
             String ReceiverAddress = OrderDetails.getOrderlist().get(GetRecord).getReceiverAddress();
             String ReceiverPhone = OrderDetails.getOrderlist().get(GetRecord).getReceiverPhone();
             String Feedback = OrderDetails.getOrderlist().get(GetRecord).getFeedback();
-            int Payment =  OrderDetails.getOrderlist().get(GetRecord).getPayment();
+            String Payment =  OrderDetails.getOrderlist().get(GetRecord).getPayment();
             int Rate =  OrderDetails.getOrderlist().get(GetRecord).getRate();
            
             try {
@@ -285,10 +289,13 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         
         String status;  
         if(statusIndext == 0){
+            status = "Delivering";
+        }
+        if(statusIndext == 1){
             status = "Delivered";
         }
-        else{
-            status = "Undelivered";
+        if(statusIndext == 2) {
+        	status = "Undelivered";
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 

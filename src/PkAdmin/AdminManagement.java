@@ -166,7 +166,7 @@ public class AdminManagement {
     public void AddOrder(String orderID, String CustomerName, String ReceiverName,
             String SenderID, String StaffID,String ReceiverPhone, 
             String ReceiverAddress, String Feedback,String Status, 
-            int Payment, int Rate) throws IOException {
+            String Payment, int Rate) throws IOException {
         try (PrintWriter addM = new PrintWriter(new FileWriter("OrderRecords.txt", true))) {
             addM.print(orderID + ":");
             addM.print(StaffID + ":");
@@ -194,7 +194,7 @@ public class AdminManagement {
     public void editOrder(int in, String orderID, String CustomerName, String ReceiverName,
             String CustomerID, String StaffID,String ReceiverPhone, 
             String ReceiverAddress, String Feedback, 
-            String Status, int Payment, int Rate) throws FileNotFoundException {
+            String Status, String Payment, int Rate) throws FileNotFoundException {
             OrderDetails.getOrderlist().get(in).setOrderID(orderID);
             OrderDetails.getOrderlist().get(in).setStaffID(StaffID);
             OrderDetails.getOrderlist().get(in).setCustomerID(CustomerID);

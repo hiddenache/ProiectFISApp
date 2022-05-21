@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class OrderDetails {
     private String OrderID, CustomerName , ReceiverName, CustomerID, 
-            ReceiverAddress, StaffID, ReceiverPhone, Feedback, Status;   
-    private int payment, Rate;
+            ReceiverAddress, StaffID, ReceiverPhone, Feedback, Status, payment;   
+    private int Rate;
     private static ArrayList <OrderDetails> Orderlist = new  ArrayList <>();
 
     public String getOrderID() {
@@ -77,11 +77,11 @@ public class OrderDetails {
     public void setStatus(String Status) {
         this.Status = Status;
     }
-    public int getPayment() {
+    public String getPayment() {
         return payment;
     }
 
-    public void setPayment(int payment) {
+    public void setPayment(String payment) {
         this.payment = payment;
     }
     public int getRate() {

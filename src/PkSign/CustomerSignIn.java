@@ -2,6 +2,7 @@ package PkSign;
 import PkCustomer.CustomerPanel;
 import PkCustomer.CustomerRecord;
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 public class CustomerSignIn extends javax.swing.JFrame {
     
@@ -30,7 +31,7 @@ public class CustomerSignIn extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel4.setForeground(new Color(153, 0, 255));
         jLabel4.setText("Client Log In");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
