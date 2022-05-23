@@ -2,7 +2,16 @@ package PkCustomer;
 
 import PkSign.AccessMenu;
 import PkDelivery.AssignedOrderTable;
+import PkOrders.TrackOrder;
+
 import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CustomerPanel extends javax.swing.JFrame {
     public int indext;
@@ -78,32 +87,49 @@ public class CustomerPanel extends javax.swing.JFrame {
                 viewordersActionPerformed(evt);
             }
         });
+        
+        JButton trackorder = new JButton();
+        trackorder.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		 setVisible(false);
+    	        TrackOrder track = new TrackOrder();
+    	        //track.MyOrderRecords(indext);       
+    	        track.setVisible(true);
+    	        track.setLocationRelativeTo(null);
+    	}
+        });
+        trackorder.setText("Track Order");
+        trackorder.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(backb, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(vieworders, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addGap(37)
+        			.addComponent(backb, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(234, Short.MAX_VALUE))
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addGap(92)
+        			.addComponent(vieworders, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)
+        			.addGap(76)
+        			.addComponent(trackorder, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(vieworders, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(backb, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+        	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanel1Layout.createSequentialGroup()
+        					.addComponent(vieworders, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+        					.addGap(50)
+        					.addComponent(backb, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(trackorder, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
+        			.addGap(44))
         );
+        jPanel1.setLayout(jPanel1Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,5 +217,4 @@ public class CustomerPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton vieworders;
     private javax.swing.JButton viewprofile1;
-    // End of variables declaration//GEN-END:variables
 }

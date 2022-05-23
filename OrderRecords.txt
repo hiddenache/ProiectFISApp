@@ -1,1 +1,1 @@
-4:h:2:Madalin:raul:timisoara:07642323::5:frumos:Delivered:220:4
+4:h:2:Madalin:raul:timisoara:07642323:fragil:5:frumos:Close to destination:220:3

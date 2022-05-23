@@ -140,7 +140,7 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Status");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivering", "Delivered", "Undelivered" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivering", "Delivered", "Undelivered", "Close to destination"}));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -251,6 +251,9 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         if(statusIndext == 2) {
         	status = "Undelivered";
         }
+        if(statusIndext == 3) {
+        	status = "Close to destination";
+        }
         AdminManagement ad = new AdminManagement();
         int GetRecord = ad.searchOrder2(Orderid.getText(),OrderDetails.getOrderlist().get(indext).getStaffID());
         if (GetRecord == -1){
@@ -299,6 +302,9 @@ public class AssignedOrderTable extends javax.swing.JFrame {
         }
         if(statusIndext == 2) {
         	status = "Undelivered";
+        }
+        if(statusIndext == 3) {
+        	status = "Close to destination";
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
