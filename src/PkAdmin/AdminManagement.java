@@ -165,7 +165,7 @@ public class AdminManagement {
     
     public void AddOrder(String orderID, String CustomerName, String ReceiverName,
             String SenderID, String StaffID,String ReceiverPhone, 
-            String ReceiverAddress, String greutate, String Feedback,String Status, 
+            String ReceiverAddress, String type, String greutate, String Feedback,String Status, 
             String Payment, int Rate) throws IOException {
         try (PrintWriter addM = new PrintWriter(new FileWriter("OrderRecords.txt", true))) {
             addM.print(orderID + ":");
@@ -175,6 +175,7 @@ public class AdminManagement {
             addM.print(ReceiverName + ":");            
             addM.print(ReceiverAddress + ":");
             addM.print(ReceiverPhone + ":");
+            addM.print(type + ":");
             addM.print(greutate + ":");
             addM.print(Feedback + ":");
             addM.print(Status + ":");
@@ -194,7 +195,7 @@ public class AdminManagement {
     //editare comanda
     public void editOrder(int in, String orderID, String CustomerName, String ReceiverName,
             String CustomerID, String StaffID,String ReceiverPhone, 
-            String ReceiverAddress, String greutate, String Feedback, 
+            String ReceiverAddress, String type, String greutate, String Feedback, 
             String Status, String Payment, int Rate) throws FileNotFoundException {
             OrderDetails.getOrderlist().get(in).setOrderID(orderID);
             OrderDetails.getOrderlist().get(in).setStaffID(StaffID);
@@ -203,6 +204,7 @@ public class AdminManagement {
             OrderDetails.getOrderlist().get(in).setReceiverName(ReceiverName);
             OrderDetails.getOrderlist().get(in).setReceiverAddress(ReceiverAddress);
             OrderDetails.getOrderlist().get(in).setReceiverPhone(ReceiverPhone);
+            OrderDetails.getOrderlist().get(in).setType(type);
             OrderDetails.getOrderlist().get(in).setWeight(greutate);
             OrderDetails.getOrderlist().get(in).setFeedback(Feedback);
             OrderDetails.getOrderlist().get(in).setStatus(Status);
@@ -219,6 +221,7 @@ public class AdminManagement {
                     + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                    + OrderDetails.getOrderlist().get(i).getType() + ":"
                     + OrderDetails.getOrderlist().get(i).getWeight() + ":"
                     + OrderDetails.getOrderlist().get(i).getFeedback() + ":"
                     + OrderDetails.getOrderlist().get(i).getStatus()+":"
@@ -247,6 +250,7 @@ public class AdminManagement {
                     + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                    + OrderDetails.getOrderlist().get(i).getType() + ":"
                     + OrderDetails.getOrderlist().get(i).getWeight()+ ":"
                     + OrderDetails.getOrderlist().get(i).getFeedback() + ":"
                     + OrderDetails.getOrderlist().get(i).getStatus()+":"

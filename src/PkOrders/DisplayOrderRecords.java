@@ -18,8 +18,8 @@ public class DisplayOrderRecords extends javax.swing.JFrame {
     public void DisplayOrderRecords(){
          
             String c[] = {"Order ID" , "StaffID " , "CustomerID ","Customer Name" 
-                    , "Receiver Name" , "Receiver Address", "Receiver Phone",
-                    "Order Status", "Payment", "Feedback", "Rate"};
+                    , "Receiver Name" , "Address", "Phone", "Type", "Weight(kg)",
+                    "Order Status", "Payment(RON/Card)", "Feedback", "Rate"};
         DefaultTableModel table1;
         table1 = new DefaultTableModel(0,10);
         table1.setColumnIdentifiers(c);
@@ -33,6 +33,8 @@ public class DisplayOrderRecords extends javax.swing.JFrame {
                     + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                     + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                    + OrderDetails.getOrderlist().get(i).getType() + ":"
+                    + OrderDetails.getOrderlist().get(i).getWeight() + ":"
                     + OrderDetails.getOrderlist().get(i).getStatus()+":"
                     + OrderDetails.getOrderlist().get(i).getPayment()+":"
                     + OrderDetails.getOrderlist().get(i).getFeedback() + ":"                   

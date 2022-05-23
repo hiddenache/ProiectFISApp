@@ -21,7 +21,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
         
         indext = arrayIndext;
         String c[] = {"OrderID" , "DeliverySID " , "CustomerID ","CustomerName" 
-                    , "Receiver Name" , "Receiver Address", "Receiver Phone", "Weight",
+                    , "Receiver Name" , "Receiver Address", "Receiver Phone", "Type", "Weight",
                     "Order Status", "Fees", "Feedback", "Rate"};
         DefaultTableModel table1;
         table1 = new DefaultTableModel(0,10);
@@ -42,6 +42,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                         + OrderDetails.getOrderlist().get(i).getReceiverName() + ":"
                         + OrderDetails.getOrderlist().get(i).getReceiverAddress() + ":"
                         + OrderDetails.getOrderlist().get(i).getReceiverPhone() + ":"
+                        + OrderDetails.getOrderlist().get(i).getType() + ":"
                         + OrderDetails.getOrderlist().get(i).getWeight() + ":"
                         + OrderDetails.getOrderlist().get(i).getStatus()+":"
                         + OrderDetails.getOrderlist().get(i).getPayment()+":"
@@ -251,6 +252,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 String ReceiverName = OrderDetails.getOrderlist().get(myIndext).getReceiverName();
                 String ReceiverAddress = OrderDetails.getOrderlist().get(myIndext).getReceiverAddress();
                 String ReceiverPhone = OrderDetails.getOrderlist().get(myIndext).getReceiverPhone();
+                String type = OrderDetails.getOrderlist().get(myIndext).getType();
                 String greutate = OrderDetails.getOrderlist().get(myIndext).getWeight();
                 String Payment =  OrderDetails.getOrderlist().get(myIndext).getPayment();
                 String orderstatus= OrderDetails.getOrderlist().get(myIndext).getStatus();
@@ -259,7 +261,7 @@ public class MyOrderRecords extends javax.swing.JFrame {
                 try {
                     ad.editOrder(myIndext, OrderiD,CustomerName, ReceiverName,
                             CustomerID,StaffID, ReceiverPhone,
-                            ReceiverAddress, greutate, Feedbackd.getText(), orderstatus,Payment, rate);
+                            ReceiverAddress, type, greutate, Feedbackd.getText(), orderstatus,Payment, rate);
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(MyOrderRecords.class.getName()).log(Level.SEVERE, null, ex);
                 }

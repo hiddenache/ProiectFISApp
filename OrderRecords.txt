@@ -1,2 +1,1 @@
-2:h:1:Madalin:Cristi:Arad:0767223750:2kg::Undelivered:Online, Card:0
-5:h:2:Madalin:Razvan:Buzau:07674324:1kg:am platit cu cardul:Delivering:Card:2
+4:h:2:Madalin:raul:timisoara:07642323::5:frumos:Delivered:220:4

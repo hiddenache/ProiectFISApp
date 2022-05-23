@@ -59,7 +59,7 @@ public class AdminPanel extends javax.swing.JFrame {
         });
 
         managecustomer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        managecustomer.setText("Manage Customer's Account");
+        managecustomer.setText("Modify/Edit Customer Account");
         managecustomer.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 managecustomerComponentResized(evt);
@@ -72,7 +72,7 @@ public class AdminPanel extends javax.swing.JFrame {
         });
 
         managestaff.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        managestaff.setText("Manage staff's account");
+        managestaff.setText("Modify/Edit Staff Account");
         managestaff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managestaffActionPerformed(evt);
@@ -80,7 +80,7 @@ public class AdminPanel extends javax.swing.JFrame {
         });
 
         manageOrders.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        manageOrders.setText("Manage Order's Record");
+        manageOrders.setText("Add/Modify/Edit/Delete Order");
         manageOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrdersActionPerformed(evt);

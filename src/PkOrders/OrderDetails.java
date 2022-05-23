@@ -4,8 +4,15 @@ import java.util.ArrayList;
 
 public class OrderDetails {
     private String OrderID, CustomerName , ReceiverName, CustomerID, 
-            ReceiverAddress, StaffID, ReceiverPhone, Feedback, Status, payment;   
-    private int Rate;
+            ReceiverAddress, StaffID, ReceiverPhone, Feedback, Status, payment, type;   
+    public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	private int Rate;
     private String Weight;
     public String getWeight() {
 		return Weight;

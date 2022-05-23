@@ -40,11 +40,12 @@ public class Main {
 					String Receivername = colum[4];
 					String ReceiverAddress = colum[5];
 					String Receiverphone = colum[6];
-					String greutate = colum[7];
-					String Feedback = colum[8];
-					String Status = colum[9];
-					String payment = colum[10];
-					String rate = colum[11];
+					String type = colum[7];
+					String greutate = colum[8];
+					String Feedback = colum[9];
+					String Status = colum[10];
+					String payment = colum[11];
+					String rate = colum[12];
 					int Rate = Integer.parseInt(rate);
 					String Orderpayment = payment;
 
@@ -57,6 +58,7 @@ public class Main {
 					or.setReceiverName(Receivername);
 					or.setReceiverAddress(ReceiverAddress);
 					or.setReceiverPhone(Receiverphone);
+					or.setType(type);
 					or.setWeight(greutate);
 					or.setFeedback(Feedback);
 					or.setStatus(Status);
